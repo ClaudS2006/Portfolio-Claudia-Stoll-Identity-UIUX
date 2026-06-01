@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claudia Stoll</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Serif+4:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/nav-component.js" defer></script>
+  <script src="js/footer-component.js" defer></script>
+  <script src="js/future.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <site-nav></site-nav>
+  </header>
+
+  <main class="content">
+    <!-- JS renders content -->
+    <div id="letter-container">
+    
+    <!-- Date & Location -->
+    <p id="letter-datum"></p>
+    
+    <!-- Company & Job -->
+    <div class="letter-header">
+      <h1 id="letter-firma"></h1>
+      <p id="letter-stelle"></p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Intro - larger headline -->
+    <h2 id="letter-einleitung"></h2>
+
+    <div class="divider"></div>
+
+    <!-- Welcome & Text -->
+    <div id="letter-text"></div>
+
+    <!-- Outro -->
+    <p id="letter-abschluss"></p>
+
+    <!-- Signature -->
+    <div class="letter-signatur">
+      <img src="imagery/BrandLogoClaudiaStoll.svg" alt="Logo Claudia Stoll" />
+      <span>Claudia Stoll</span>
+    </div>
+
+  </div>
+  </main>
+
+  <site-footer></site-footer>
+
+</body>
+</html>
