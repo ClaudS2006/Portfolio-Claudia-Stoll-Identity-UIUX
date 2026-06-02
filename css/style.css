@@ -1,92 +1,92 @@
 
-
-
-    :root {
-      --bg: #f5f0e8;
-      --ink: #1a1410;
-      --body-muted: #5a4f45;
-      --label-sm: rgb(54, 62, 54);
-      --accent: rgba(77, 121, 77);
-      --menu-bg: #1a1410;
-      --overlay: rgba(26, 20, 16, 0.75);
-    }
+/* ######### - ROOT - ############### */
+:root {
+  --white: #f9f9f9;
+  --bg: #f5f0e8;
+  --ink: #1a1410;
+  --body-muted: #5a4f45;
+  --label-sm: rgb(54, 62, 54);
+  --accent: rgba(77, 121, 77);
+  --menu-bg: #1a1410;
+  --overlay: rgba(26, 20, 16, 0.75);
+}
 /* BASE STYLES AND RESET */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* BODY STYLE */
+/* ######### - BODY STYLE - ############### */
 
-    body {
-      font-family: 'Source Serif 4', serif;
-      background-color: var(--bg);
-      color: var(--ink);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-      align-items: stretch;
-    }
+body {
+  font-family: 'Source Serif 4', serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  align-items: stretch;
+}
 
-     header {
-      width: 100%;
+header {
+  width: 100%;
+}
+
+/* ######### - MAIN CONTENT - ############### */
     
-    }
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  justify-content: center;
+  text-align: center;
+  padding-top: 4.5rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  z-index: 10;
+  transition: filter 0.4s ease;
+}
 
-    /* ── MAIN ── */
-    
-    .content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-self: flex-start;
-      justify-content: center;
-      text-align: center;
-      padding-top: 4.5rem;
-      padding-bottom: 2rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      width: 100%;
-      z-index: 10;
-      transition: filter 0.4s ease;
-    }
+/* H1 HOME */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  color: var(--ink);
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 6vw, 3rem);
-      color: var(--ink);
-      margin-bottom: 20px;
-      line-height: 1.1;
-    }
+h1.name {
+  color: var(--accent);
+  font-size: clamp(1.8rem, 6vw, 3rem);
+}    
 
-    h1.name {
-      color: var(--accent);
-      font-size: clamp(1.8rem, 6vw, 3rem);
-    }    
+p {
+  font-size: clamp(0.9rem, 6vw, 1.1rem);
+  line-height: 1.8;
+  display: block;
+  max-width: 540px;
+  color: var(--body-muted);
+  margin-inline: auto;
+  font-weight: 300;
+  font-style: italic;
+}
 
-    p {
-      font-size: clamp(0.9rem, 6vw, 1.1rem);
-      line-height: 1.8;
-      display: block;
-      max-width: 540px;
-      color: var(--body-muted);
-      margin-inline: auto;
-      font-weight: 300;
-      font-style: italic;
-    }
+/* DECORATIVE LINE */
+.divider {
+  width: 48px;
+  height: 2px;
+  background: var(--accent);
+  margin: 18px auto;
+}
 
-    /* decorative line */
-    .divider {
-      width: 48px;
-      height: 2px;
-      background: var(--accent);
-      margin: 18px auto;
-    }
 
-    /* ──  ABOUT ── */
 
 /* ######### - HERO SECTION - ############### */
 .hero {
@@ -97,7 +97,7 @@
   background: radial-gradient(ellipse, var(--accent) 25%, rgba(248, 248, 248, 0) 70%);
 }
 
-/* Both Slides */
+/* BOTH SLIDES */
 .hero-slide {
   display: flex;
   align-items: center;
@@ -111,13 +111,13 @@
   transition: opacity 0.8s ease-in-out;
 }
 
-/* Active Slide */
+/* ACTIVE SLIDE */
 .hero-slide.active {
   opacity: 1;
   position: relative;
 }
 
-/* Text Area */
+/* HERO TEXT AREA*/
 .hero-text {
   display: flex;
   flex-direction: column;
@@ -138,7 +138,7 @@
   min-height: 1.5em; /* verhindert layout-sprung */
 }
 
-/* Pause Animation Btn */
+/* PAUSE ANIMATION BTN */
 
 .pause-container {
   position: sticky;
@@ -161,14 +161,14 @@
   background: darkseagreen;
   border: transparent;
   border-radius: 4px;
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: 1rem;
   cursor: pointer;
   z-index: 10;
   opacity: 0.7;
   transition: opacity 0.3s;
   display: flex;
   justify-content: center;
-  padding: 0.3rem 0.5rem;
+  padding: 0.5rem;
   line-height: 1;
 }
 
@@ -176,13 +176,7 @@
   opacity: 1;
 }
 
-.hero-pause-label {
-  font-size: clamp(0.5rem, 2vw, 0.75rem);
-  color: var(--label-sm);
-  opacity: 0.7;
-}
-
-/* Bild */
+/* CONTAINER & IMG HERO */
 .bg-container-profile-pic {
   position: relative;
   display: flex;
@@ -226,7 +220,7 @@
   }
 }
 
-/* ######### ABOUT SECTION - CARDS ######### */
+/* ######### ABOUT SECTION - TEXT & CARDS ######### */
 
 
 .about-section {
@@ -234,8 +228,24 @@
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  padding: 4rem 0;
+  padding: 4rem 0 0 0;
 }
+
+/* INTRO CONTAINER & TEXT */
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.intro p {
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+  font-style: normal;
+  color: var(--ink);
+}
+
+/* CARD W/ IMG H2 & P */
 
 .card {
   position: relative;
@@ -245,6 +255,8 @@
   flex-wrap: wrap;
   width: 100%;
   padding: 2rem clamp(1.5rem, 5vw, 4rem);
+  border-radius: 12px;
+  background-color: var(--white);
 }
 
 .card-reverse {
@@ -278,20 +290,19 @@
 
 .card-image {
   flex: 1 1 40%;
-  min-width: 280px;
+  min-width: 0;
 }
 
-.card-img-placeholder {
-  width: 100%;
-  aspect-ratio: 4/3;
-  background: var(--accent);
-  opacity: 0.2;
-  border-radius: 8px;
+.card-image img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: cover; /* ← füllt den Container ohne zu verzerren */
+  border-radius: 8px; /* ← optional, passend zu den Card-Ecken */
 }
 
 .card-text {
   flex: 1 1 50%;
-  min-width: 280px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -302,6 +313,25 @@
   text-align: center;
   font-family: 'Source Serif 4', serif;
   font-size: clamp(1rem, 2vw, 1.4rem);
+  color: var(--ink);
+}
+
+.description {
+  display: flex;
+}
+
+.card-text h5 {
+  text-align: center;
+}
+
+/* PARAGRAPH STYLE EDUCATION */
+.card-text .education {
+  display: block;
+  text-align: center;
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  max-width: 100%;
+  margin-inline: 0;
+  font-style: normal;
   color: var(--ink);
 }
 
@@ -321,7 +351,7 @@
   color: var(--ink);
 }
 
-/* ====== FUTURE - Resume ====== */
+/* ######### FUTURE HTML - RESUMEE ######### */
 
 #letter-container {
   max-width: 680px;

@@ -2,7 +2,6 @@
 const slides = document.querySelectorAll('.hero-slide');
 const titles = ['UI/UX Design Enthusiast', 'Frontend Developer'];
 const accentColors = ['var(--color-acc)', 'var(--accent-dev)'];
-const pauseLabel = document.querySelector('.hero-pause-label');
 
 let currentSlide = 0;
 let isPaused = false;
@@ -80,8 +79,7 @@ const heroObserver = new IntersectionObserver((entries) => {
       clearInterval(currentInterval);
       clearTimeout(currentTimeout);
       isPaused = true;
-      pauseBtn.textContent = '▶';
-      pauseLabel.textContent = 'Play on';
+      pauseBtn.textContent = 'Play 🎵';
       pauseBtn.setAttribute('aria-label', 'Play Animation');
     }
   });
@@ -92,9 +90,8 @@ heroObserver.observe(hero);
 // ====== PAUSE BTN ======
 pauseBtn.addEventListener('click', () => {
   isPaused = !isPaused;
-  pauseBtn.textContent = isPaused ? '▶' : '⏸';
+  pauseBtn.textContent = isPaused ? 'Play 🎵' : 'Psst 💤';
   pauseBtn.setAttribute('aria-label', isPaused ? 'Play Animation' : 'Pause Animation');
-  pauseLabel.textContent = isPaused ? 'Play on' : 'Pause me';
 
   if (isPaused) {
     clearInterval(currentInterval);
