@@ -17,50 +17,97 @@
     <site-nav></site-nav>
   </header>  
 
-    <!-- MAIN -->
-    <main class="content">
-      <!-- Pause Animation -->
-       <div class="pause-container" role="none">
-        <button class="hero-pause-btn" aria-label="Animation pausieren">⏸</button>
-        <span class="hero-pause-label">Pause me</span>
-      </div>
-      <section class="hero">          
-          <!-- Designerin -->
-          <div class="hero-slide hero-design active">
-            <div class="bg-container-profile-pic">
-              <img
-                class="profile-pic"
-                src="imagery/Designer.png"
-                alt="Claudia Stoll - UI/UX Designer"
-                tabindex="-1"
-              />
-            </div>
-            <div class="hero-text">             
-              <p class="typewriter-title"></p>
-            </div>
+  <!-- MAIN -->
+  <main class="content">
+  <!-- Pause Animation -->
+    <div class="pause-container" role="none">
+      <button class="hero-pause-btn" aria-label="Animation pausieren">⏸</button>
+      <span class="hero-pause-label">Pause me</span>
+    </div>
+    <!-- Hero Animation Section -->
+    <section class="hero">          
+          
+      <!-- Designerin -->
+        <div class="hero-slide hero-design active">
+          <div class="bg-container-profile-pic">
+            <img
+            class="profile-pic"
+            src="imagery/Designer.png"
+            alt="Claudia Stoll - UI/UX Designer"
+            tabindex="-1"
+            />
           </div>
+          <div class="hero-text">             
+            <p class="typewriter-title"></p>
+          </div>
+        </div>
 
-          <!-- Developerin -->
-          <div class="hero-slide hero-dev">
-            <div class="hero-text">
-              <p class="typewriter-title"></p>
-            </div>
-            <div class="bg-container-profile-pic">
-              <img
-                class="profile-pic"
-                src="imagery/Developer.png"
-                alt="Claudia Stoll - Frontend Developer"
-                tabindex="-1"
-              />
-            </div>
+        <!-- Developerin -->
+        <div class="hero-slide hero-dev">
+          <div class="hero-text">
+            <p class="typewriter-title"></p>
           </div>
-        </section>
+          <div class="bg-container-profile-pic">
+            <img
+            class="profile-pic"
+            src="imagery/Developer.png"
+            alt="Claudia Stoll - Frontend Developer"
+            tabindex="-1"
+            />
+          </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section">
+
+      <!-- Card 1: Img left - Text right - The Spark -->
+      <article class="card">
+        <div class="card-image">
+          <img src="imagery/[dein bild]" alt="[beschreibung]" />
+        </div>
+        <div class="card-text">
+          <h2>The Spark</h2>
+          <div class="divider"></div>
+          <p>So that the digital world doesn't shape us — 
+             but we shape it.
+          </p>
+          <p>
+            I wasn't always drawn to technology. But curiosity 
+            was stronger than skepticism. The moment I realized 
+            I could build my own things — design them, code them, 
+            bring them to life — everything changed.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 2: Img right - Text left - The Way -->
+      <article class="card card-reverse">
+        <div class="card-image">
+          <img src="imagery/[dein bild]" alt="[beschreibung]" />
+        </div>
+        <div class="card-text">
+          <h2>The Journey</h2>
+          <div class="divider"></div>
+          <p>From doubt to passion — one line of code at a time.</p>
+
+          <p>What started as a desire to understand how the digital 
+            world is built became something much bigger. It wasn't 
+            enough for me to design beautiful surfaces. I wanted to see 
+            it through — from the first sketch in Figma to the 
+            last line of code.
+          </p>
+        </div>
+      </article>
+
+      </section>
 
     </main>
     
     <!-- FOOTER -->
-      <footer> 
-        <site-footer></site-footer>
-      </footer>
+    <footer> 
+      <site-footer></site-footer>
+    </footer>
+  
   </body>
 </html>

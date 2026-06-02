@@ -24,6 +24,8 @@ class SiteNav extends HTMLElement {
             width: 100%;
             max-width: 100vw;
             box-sizing: border-box;
+            background: var(--bg);
+            transition: background 0.3s;
         }
 
         .hamburger {
@@ -203,14 +205,16 @@ class SiteNav extends HTMLElement {
     const hamburger = this.shadowRoot.querySelector('.hamburger');
     const nav = this.shadowRoot.querySelector('nav');
     const overlay = this.shadowRoot.querySelector('.overlay');
+    const navHeader = this.shadowRoot.querySelector('.nav-header');
 
-    function openMenu() {
+    function openMenu() {  
       nav.classList.add('open');
       overlay.classList.add('open');
       hamburger.classList.add('open');
       hamburger.setAttribute('aria-expanded', 'true');
       hamburger.setAttribute('aria-label', 'Close Menu');
       nav.querySelector('a').focus();
+      navHeader.style.background = 'transparent';
     }
 
     function closeMenu() {
@@ -220,6 +224,7 @@ class SiteNav extends HTMLElement {
       hamburger.setAttribute('aria-expanded', 'false');
       hamburger.setAttribute('aria-label', 'Open Menu');
       hamburger.focus();
+      navHeader.style.background = 'var(--bg)';
     }
 
     hamburger.addEventListener('click', () => {
