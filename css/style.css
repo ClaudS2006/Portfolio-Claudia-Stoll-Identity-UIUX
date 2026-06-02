@@ -140,6 +140,23 @@
 
 /* Pause Animation Btn */
 
+.pause-container {
+  position: sticky;
+  top: 5rem;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  z-index: 10;
+}
+
+.pause-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
 .hero-pause-btn {
   background: darkseagreen;
   border: transparent;
@@ -150,7 +167,6 @@
   opacity: 0.7;
   transition: opacity 0.3s;
   display: flex;
-  align-self: flex-start;
   justify-content: center;
   padding: 0.3rem 0.5rem;
   line-height: 1;
@@ -161,9 +177,6 @@
 }
 
 .hero-pause-label {
-  display: flex;
-  align-self: flex-start;
-  justify-content: center;
   font-size: clamp(0.5rem, 2vw, 0.75rem);
   color: var(--label-sm);
   opacity: 0.7;

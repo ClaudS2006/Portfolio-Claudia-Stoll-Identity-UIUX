@@ -7,7 +7,7 @@ const pauseLabel = document.querySelector('.hero-pause-label');
 let currentSlide = 0;
 let isPaused = false;
 let currentInterval = null;
-let currentTimeout = null; // ← neu
+let currentTimeout = null; 
 
 const typewriterEls = document.querySelectorAll('.typewriter-title');
 const pauseBtn = document.querySelector('.hero-pause-btn');
@@ -21,14 +21,14 @@ function typeText(element, text, color, callback) {
   currentInterval = setInterval(() => {
     if (i >= text.length) {
       clearInterval(currentInterval);
-      currentTimeout = setTimeout(callback, 2000); // ← gespeichert
+      currentTimeout = setTimeout(callback, 2000); 
       return;
     }
     element.textContent += text[i];
     i++;
     if (i === text.length) {
       clearInterval(currentInterval);
-      currentTimeout = setTimeout(callback, 2000); // ← gespeichert
+      currentTimeout = setTimeout(callback, 2000); 
     }
   }, 80);
 }
@@ -56,7 +56,7 @@ function switchSlide() {
     currentSlide = currentSlide === 0 ? 1 : 0;
     slides[currentSlide].classList.add('active');
     
-    currentTimeout = setTimeout(() => { // ← gespeichert
+    currentTimeout = setTimeout(() => { 
       if (!isPaused) {
         typeText(typewriterEls[currentSlide], titles[currentSlide], accentColors[currentSlide], switchSlide);
       }
@@ -64,7 +64,32 @@ function switchSlide() {
   });
 }
 
-// Pause Button
+// ====== INTERSECTION OBSERVER PAUSE BTN ======
+
+const hero = document.querySelector('.hero');
+const pauseContainer = document.querySelector('.pause-container');
+
+const heroObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Hero visible - show btn
+      pauseContainer.classList.remove('hidden');
+    } else {
+      // Hero out of viewport → hide btn + pause animation
+      pauseContainer.classList.add('hidden');
+      clearInterval(currentInterval);
+      clearTimeout(currentTimeout);
+      isPaused = true;
+      pauseBtn.textContent = '▶';
+      pauseLabel.textContent = 'Play on';
+      pauseBtn.setAttribute('aria-label', 'Play Animation');
+    }
+  });
+});
+
+heroObserver.observe(hero);
+
+// ====== PAUSE BTN ======
 pauseBtn.addEventListener('click', () => {
   isPaused = !isPaused;
   pauseBtn.textContent = isPaused ? '▶' : '⏸';
@@ -73,10 +98,10 @@ pauseBtn.addEventListener('click', () => {
 
   if (isPaused) {
     clearInterval(currentInterval);
-    clearTimeout(currentTimeout); // ← beide stoppen
+    clearTimeout(currentTimeout); 
   } else {
     clearInterval(currentInterval);
-    clearTimeout(currentTimeout); // ← beide clearen
+    clearTimeout(currentTimeout); 
     currentTimeout = setTimeout(() => {
       typewriterEls[currentSlide].textContent = '';
       typeText(typewriterEls[currentSlide], titles[currentSlide], accentColors[currentSlide], switchSlide);
