@@ -7,6 +7,7 @@
   --body-muted: #5a4f45;
   --label-sm: rgb(54, 62, 54);
   --accent: rgba(77, 121, 77);
+  --accent-complementary: rgb(121 77 77);
   --menu-bg: #1a1410;
   --overlay: rgba(26, 20, 16, 0.75);
 }
@@ -351,6 +352,12 @@ p {
   color: var(--ink);
 }
 
+.card::before,
+.card::after {
+  pointer-events: none; /* make area clickable for summary to work */
+}
+
+
 /* SPAN FOR LANGUAGES */
 
 .bold {
@@ -397,10 +404,25 @@ time {
 
 summary {
   cursor: pointer;
-  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  color: var(--accent-complementary);
   font-size: clamp(0.8rem, 2vw, 1.2rem);
-  font-weight: 700;
-  margin: 1rem 0;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+}
+
+.btt-lk {
+  color: var(--accent-complementary);
+  margin: 2rem 0 0 0;
+  text-decoration: none;
+}
+
+.btt-lk:hover{
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
 }
 
 /* ######### FUTURE HTML - RESUMEE ######### */
