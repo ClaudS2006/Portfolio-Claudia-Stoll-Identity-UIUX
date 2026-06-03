@@ -83,7 +83,7 @@ p {
   width: 48px;
   height: 2px;
   background: var(--accent);
-  margin: 18px auto;
+  margin: 0.5rem auto;
 }
 
 
@@ -128,14 +128,14 @@ p {
 }
 
 .hero-dev .hero-text {
-  text-align: right; /* ← text geht zum bild hin */
+  text-align: right;
 }
 
 .typewriter-title {
-  font-size: clamp(1rem, 2.5vw, 2rem); /* platzhalter */
+  font-size: clamp(1rem, 2.5vw, 2rem); /* placeholder */
   font-weight: 700;
-  color: var(--ink); /* platzhalter */
-  min-height: 1.5em; /* verhindert layout-sprung */
+  color: var(--ink); /* placeholder */
+  min-height: 1.5em; /* prevents layout-jump */
 }
 
 /* PAUSE ANIMATION BTN */
@@ -182,19 +182,19 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1 1 50%; /* ← beide Container gleich groß */
+  flex: 1 1 50%; /* containers same width */
 }
 
 .profile-pic {
   position: relative;
   z-index: 1;
-  width: 100%; /* ← füllt den Container */
+  width: 100%; /* fills container */
   max-width: 30rem;
 }
 
 /* ######### - MEDIA - #################### */
 
-@media (max-width: 1000px) { /* statt 768px */
+@media (max-width: 1000px) { /* instead of 768px */
   .hero-slide {
     flex-direction: column;
     text-align: center;
@@ -205,7 +205,7 @@ p {
   }
 
   .hero-dev .hero-text {
-    text-align: center; /* ← auf mobile wieder zentrieren */
+    text-align: center; /* centered on mobile */
   }
 
   .hero-text {
@@ -296,8 +296,8 @@ p {
 .card-image img {
   max-width: 100%;
   max-height: 400px;
-  object-fit: cover; /* ← füllt den Container ohne zu verzerren */
-  border-radius: 8px; /* ← optional, passend zu den Card-Ecken */
+  object-fit: cover; 
+  border-radius: 12px; 
 }
 
 .card-text {
@@ -325,7 +325,7 @@ p {
 }
 
 /* PARAGRAPH STYLE EDUCATION */
-.card-text .education {
+.education {
   display: block;
   text-align: center;
   font-size: clamp(0.8rem, 1.2vw, 1rem);
@@ -349,6 +349,58 @@ p {
   font-size: clamp(0.9rem, 1.5vw, 1.1rem);
   font-style: italic;
   color: var(--ink);
+}
+
+/* SPAN FOR LANGUAGES */
+
+.bold {
+  font-weight: 700;
+}
+
+/* EDUCATION GRID */
+
+.education-grid {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr); /* 2 next to each other */
+  gap: 2rem;
+  width: 100%;
+}
+
+.education-entry {
+  display: grid;
+  grid-template-columns: auto 1fr; /* date left, text right */
+  gap: 0.5rem 1.5rem;
+  margin: 0 0 1rem 0;
+  align-items: start;
+}
+
+time {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-style: italic;
+  padding-top: 0.2rem; /* aligned w/ h5 */
+  white-space: nowrap; /* date stays on one row */
+}
+
+.education-entry h5,
+.education-entry p {
+  grid-column: 2; /* always right column */
+  text-align: left;
+}
+
+.education-grid p:first-of-type {
+  font-style: normal; /* annulles italic */
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+}
+
+/* SUMMARY */
+
+summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  font-weight: 700;
+  margin: 1rem 0;
 }
 
 /* ######### FUTURE HTML - RESUMEE ######### */
