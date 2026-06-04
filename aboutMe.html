@@ -218,7 +218,7 @@
     
       
 
-      <!-- Card 2: Img left - Text right-->
+      <!-- Card 1: Img left - Text right-->
       <article class="card">
         <div class="card-image">
           <img src="imagery/Communication.jpg" alt="[description]" />
@@ -243,7 +243,7 @@
         </div>
       </article>
 
-      <!-- Card 3: Img right - Text left -->
+      <!-- Card 2: Img right - Text left -->
       <article class="card card-reverse">
         <div class="card-image">
           <img src="imagery/MeTime.jpg" alt="[description]" />
@@ -263,9 +263,118 @@
       </article>
 
     </section>
-    <a href="#" class="btt-lk">Back to Top &uarr;</a>
+
+    <!-- CONTACT SECTION -->
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Get in Touch</h2>
+      <div class="divider"></div>
+      <p>I'd love to hear from you!</p>
+
+      <form 
+        class="contact-form" 
+        action="https://formspree.io/f/deinCode" 
+        method="POST"
+        novalidate
+        aria-label="Contact Form">
+
+        <!-- Noscript Fallback -->
+        <noscript>
+          <p>Please enable JavaScript for the best experience, 
+          or email me directly at 
+          <a href="mailto:cstoll2006@gmail.com">cstoll2006@gmail.com</a>
+          </p>
+        </noscript>
+
+        <!-- Honeypot -->
+        <input 
+          type="text" 
+          name="_honey" 
+          style="display:none" 
+          tabindex="-1" 
+          aria-hidden="true"/>
+
+      <!-- Left Col -->
+      <div class="contact-left">
+
+        <!-- Name -->
+        <div class="form-group">
+          <label for="name">
+            Full Name
+            <span class="required" aria-hidden="true">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name"
+            placeholder="e.g., Jane Smith"
+            required
+            aria-required="true"
+            aria-describedby="name-error"
+            autocomplete="name"/>
+          <span class="error-msg" id="name-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">
+            Email
+            <span class="required" aria-hidden="true">*</span>
+          </label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email"
+            placeholder="e.g., smith@gmail.com"
+            required
+            aria-required="true"
+            aria-describedby="email-error"
+            autocomplete="email"/>
+          <span class="error-msg" id="email-error" role="alert" aria-live="polite"></span>
+        </div>
+
+      </div>
+
+    <!-- Right Col -->
+    <div class="contact-right">
+
+      <!-- Message -->
+      <div class="form-group">
+        <label for="message">
+          Message
+          <span class="required" aria-hidden="true">*</span>
+        </label>
+        <textarea 
+          id="message" 
+          name="message"
+          placeholder="What's on your mind?"
+          required
+          aria-required="true"
+          aria-describedby="message-error"
+        ></textarea>
+        <span class="error-msg" id="message-error" role="alert" aria-live="polite"></span>
+      </div>
+
+      <!-- Error Expl -->
+      <span class="form-error" role="alert" aria-live="polite"></span>
+
+      <!-- Submit Button -->
+      <button 
+        type="submit" 
+        class="contact-btn"
+        disabled
+        aria-disabled="true">
+        Send
+      </button>
+
+    </div>
+
+  </form>
+</section>
+  
 
   </main>
+  <a href="#" class="btt-lk">Back to Top &uarr;</a>
     
     <!-- FOOTER -->
   <footer> 

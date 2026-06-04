@@ -176,7 +176,7 @@ class SiteNav extends HTMLElement {
         <a href="/index.html">Home</a>
         <a href="#">Projects</a>
         <a href="/aboutMe.html">This is Me</a>
-        <a href="#">Contact</a>
+        <a href="aboutMe.html#contact">Contact</a>
 
         <div class="drawer-footer">
             <span>Claudia Stoll</span>
@@ -215,6 +215,7 @@ class SiteNav extends HTMLElement {
       hamburger.setAttribute('aria-label', 'Close Menu');
       nav.querySelector('a').focus();
       navHeader.style.background = 'transparent';
+      document.querySelector('main').classList.add('blurred');
     }
 
     function closeMenu() {
@@ -225,6 +226,7 @@ class SiteNav extends HTMLElement {
       hamburger.setAttribute('aria-label', 'Open Menu');
       hamburger.focus();
       navHeader.style.background = 'var(--bg)';
+      document.querySelector('main').classList.remove('blurred');
     }
 
     hamburger.addEventListener('click', () => {
@@ -248,6 +250,12 @@ class SiteNav extends HTMLElement {
         }
       }
     });
+      
+    // close side menu on navigation
+    const navLinks = this.shadowRoot.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
   } // connectedCallback ends here
 }
 
