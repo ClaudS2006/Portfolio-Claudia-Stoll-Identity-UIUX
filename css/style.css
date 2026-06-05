@@ -20,9 +20,13 @@
   /* Text & Accent */
   --accent: rgba(77 121 77);
   --accent-complementary: rgb(121 77 77);
+  --state-focus-opa: rgba(77, 77, 121, 0.2);  
+  --state-erro-opa: rgba(160, 27, 40, 0.2);   
+  --state-success: rgba(40, 160, 26, 0.2); 
   /* Border */  
   --border-muted: rgba(26 20 16 0.1);
   --border-input: rgba(171, 92, 39, 0.6);
+  --border-card-corner: rgb(170, 169, 169);
   /* Typography Scale */
   --text-xs: 0.8rem;
   --text-sm: clamp(0.8rem, 1.2vw, 1rem);
@@ -85,7 +89,7 @@ h1 {
   font-family: 'Playfair Display', serif;
   font-size: var(--text-2xl);
   color: var(--ink);
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   line-height: 1.1;
 }
 
@@ -189,7 +193,6 @@ p {
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
-  z-index: 10;
   opacity: 0.7;
   transition: opacity 0.3s;
   display: flex;

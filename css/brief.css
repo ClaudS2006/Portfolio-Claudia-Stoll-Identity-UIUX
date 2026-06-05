@@ -12,20 +12,20 @@
 }
 
 #letter-datum {
-  font-size: 0.9rem;
+  font-size: var(--text-base);
   color: var(--body-muted);
   font-style: italic;
 }
 
 .letter-header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: var(--text-2xl);
   color: var(--accent);
   text-align: center;
 }
 
 .letter-header p {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: var(--text-lg);
   color: var(--ink);
   font-style: normal;
   text-align: center;
@@ -36,7 +36,7 @@
 
 #letter-einleitung {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-size: var(--text-xl);
   color: var(--ink);
   font-style: italic;
   line-height: 1.4;
@@ -44,14 +44,14 @@
 }
 
 #letter-text {
-  font-size: 1rem;
+  font-size: var(--text-base);;
   line-height: 1.6;
   color: var(--body-muted);
   white-space: pre-line; /* linebreaks in JS */
 }
 
 #letter-abschluss {
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: var(--ink);
   font-style: italic;
   display: block;
@@ -76,6 +76,6 @@
 
 .letter-signatur span {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: var(--text-lg);
   color: var(--ink);
 }
