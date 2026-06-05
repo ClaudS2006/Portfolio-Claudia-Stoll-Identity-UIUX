@@ -20,7 +20,7 @@ class SiteFooter extends HTMLElement {
         flex-wrap: wrap;
         width: 100%;
         gap: 1.5em;
-        font-size: 0.8rem;
+        font-size: var(--text-sm);
         padding: 1rem 0;
         }
       

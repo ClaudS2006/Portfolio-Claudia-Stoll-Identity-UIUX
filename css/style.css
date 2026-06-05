@@ -28,12 +28,12 @@
   --border-input: rgba(171, 92, 39, 0.6);
   --border-card-corner: rgb(170, 169, 169);
   /* Typography Scale */
-  --text-xs: 0.8rem;
-  --text-sm: clamp(0.8rem, 1.2vw, 1rem);
-  --text-base: clamp(0.9rem, 1.5vw, 1.1rem);
-  --text-lg: clamp(1rem, 2vw, 1.4rem);
-  --text-xl: clamp(1.8rem, 4vw, 2.5rem);
-  --text-2xl: clamp(2.2rem, 6vw, 3rem);
+  --text-xs: 0.9rem;
+  --text-sm: clamp(1rem, 1.2vw, 1.2rem);
+  --text-base: clamp(1.1rem, 1.5vw, 1.3rem);
+  --text-lg: clamp(1rem, 2vw, 1.5rem);
+  --text-xl: clamp(1.8rem, 4vw, 3rem);
+  --text-2xl: clamp(2.2rem, 6vw, 3.5rem);
 }
 
 /* BASE STYLES AND RESET */
@@ -114,7 +114,7 @@ p {
   width: 48px;
   height: 2px;
   background: var(--accent);
-  margin: 0.5rem auto;
+  margin: 1rem auto;
 }
 
 
@@ -124,7 +124,7 @@ p {
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-inline: 0;
+  margin-inline: auto;
   background: radial-gradient(ellipse, var(--accent) 25%, rgba(248, 248, 248, 0) 70%);
 }
 

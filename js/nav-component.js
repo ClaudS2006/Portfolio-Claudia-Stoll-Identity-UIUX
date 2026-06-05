@@ -85,7 +85,7 @@ class SiteNav extends HTMLElement {
             color: var(--bg);
             text-decoration: none;
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
+            font-size: var(--text-lg);
             line-height: 1.2;
             padding: 10px 0;
             border-bottom: 1px solid rgba(245,240,232,0.1);
@@ -95,7 +95,7 @@ class SiteNav extends HTMLElement {
         }
 
         .brief-link {
-        font-size: 0.9rem !important; /* ← kleiner als Nav Links */
+        font-size: var(--text-sm) !important; /* ← kleiner als Nav Links */
         color: var(--accent) !important; /* ← Accent Farbe */
         border-bottom: 1px solid var(--accent) !important;
         padding: 6px 0 !important;
@@ -117,11 +117,10 @@ class SiteNav extends HTMLElement {
             gap: 0.5rem;
             padding-top: 1rem;
             color: var(--bg);
-            font-size: 0.9rem;
         }
 
         .drawer-footer a {
-            font-size: 0.9rem;
+            font-size: var(--text-sm);
             padding: 0;
             border-bottom: none;
         }

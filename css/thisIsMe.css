@@ -14,8 +14,9 @@
 
 .intro {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   text-align: center;
+  padding-top: 5.5rem;
 }
 
 .intro p {
