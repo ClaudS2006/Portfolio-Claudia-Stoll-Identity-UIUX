@@ -115,6 +115,7 @@ const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const messageInput = document.getElementById('message');
 const submitBtn = document.querySelector('.contact-btn');
+const cancelBtn = document.querySelector('.cancel-btn');
 
 // REGEX
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -279,6 +280,25 @@ form.addEventListener('submit', async (e) => {
       submitBtn.setAttribute('aria-disabled', 'false');
       document.querySelector('.form-error').textContent = '';
     }, 3000);
+  }
+});
+// ====== CANCEL BTN ======
+cancelBtn.addEventListener('click', () => {
+  if (confirm('Clear all fields?')) {
+    form.reset();
+    // Remove Success/Error States
+    [nameInput, emailInput, messageInput].forEach(input => {
+      input.classList.remove('success', 'error');
+    });
+    // Clear Error Messages
+    document.querySelectorAll('.error-msg').forEach(msg => {
+      msg.textContent = '';
+    });
+    // Button again disabled
+    submitBtn.disabled = true;
+    submitBtn.setAttribute('aria-disabled', 'true');
+    // emptyForm Error
+    document.querySelector('.form-error').textContent = '';
   }
 });
 

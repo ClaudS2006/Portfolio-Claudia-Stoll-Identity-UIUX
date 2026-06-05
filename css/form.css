@@ -115,6 +115,34 @@ textarea.success {
   display: none;
 }
 
+/* Container w/ Action Btns SEND / CLEAR */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Cancel Button */
+.cancel-btn {
+  font-family: 'Playfair Display', serif;
+  font-size: var(--text-base);
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--body-muted);
+  border-radius: 4px;
+  background: transparent; /* ← nur outline */
+  color: var(--body-muted);
+  cursor: pointer;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: var(--white);
+  border-color: var(--accent-complementary);
+  color: var(--accent-complementary);
+}
+
 /* Send Buttom */
 
 /* Button Disabled */
@@ -127,7 +155,6 @@ textarea.success {
   cursor: not-allowed;
   background: var(--body-muted);
   color: var(--white);
-  align-self: flex-end;
   transition: background 0.3s, color 0.3s;
 }
 

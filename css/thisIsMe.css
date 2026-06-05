@@ -10,13 +10,21 @@
   margin-inline: auto;
 }
 
+.Hi {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  background-color: var(--contact-h2-bg);
+  width: 100%;
+  margin-inline: auto;
+  border-radius: 4px;
+  padding: 1rem 0;
+}
+
 /* INTRO CONTAINER & TEXT */
 
 .intro {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   text-align: center;
-  padding-top: 5.5rem;
 }
 
 .intro p {
