@@ -173,7 +173,7 @@ class SiteNav extends HTMLElement {
     <nav id="nav-drawer" aria-label="Main Navigation">
         <img id="logo" src="imagery/BrandLogoClaudiaStoll.svg" alt="Logo Claudia Stoll" />
         <a href="/index.html">Home</a>
-        <a href="#">Projects</a>
+        <a href="/projects.html">Projects</a>
         <a href="/aboutMe.html">This is Me</a>
         <a href="aboutMe.html#contact">Contact</a>
 
