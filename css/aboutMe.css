@@ -52,6 +52,8 @@
   flex-wrap: wrap;
 }
 
+/* PHOTE EDGES CARD COMMU & ME OFF THE CLOCK */
+
 .card::before {
   content: '';
   position: absolute;
@@ -79,7 +81,7 @@
 .card-image {
   flex: 1 1 40%;
   min-width: 0;
-}
+} 
 
 .card-image img {
   max-width: 100%;
@@ -104,22 +106,9 @@
   color: var(--ink);
 }
 
-.description {
-  display: flex;
-}
-
-.card-text h5 {
-  text-align: center;
-}
-
-/* PARAGRAPH STYLE EDUCATION */
-.education {
-  display: block;
-  text-align: center;
-  font-size: var(--text-sm);
-  max-width: 100%;
-  margin-inline: 0;
-  font-style: normal;
+.card-text p:first-of-type {
+  font-size: var(--text-base);
+  font-style: italic;
   color: var(--ink);
 }
 
@@ -133,29 +122,50 @@
   color: var(--body-muted);
 }
 
-.card-text p:first-of-type {
-  font-size: var(--text-base);
-  font-style: italic;
-  color: var(--ink);
-}
-
 .card::before,
 .card::after {
-  pointer-events: none; /* make area clickable for summary to work */
+  pointer-events: none; /* pseudo-element was covering
+  Summary */
 }
 
-
-/* SPAN FOR LANGUAGES */
+/* SPAN CARD COMMUNICATION LANGUAGES */
 
 .bold {
   font-weight: 700;
 }
 
-/* EDUCATION GRID */
+/* CARD & GRID EDUCATION */
 
 #education {
-  border-bottom: 1px solid var(--border-muted);
+  display: block;
+  text-align: center;
+  font-size: var(--text-xs);
+  max-width: 100%;
+  margin-inline: 0;
+  font-style: normal;
+  color: var(--ink);
 }
+
+/* SUMMARY */
+
+summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  color: var(--accent-complementary);
+  font-size: var(--text-sm);
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  transition: font-size 0.4s ease;
+}
+
+summary:hover {
+  font-size: var(--text-base);
+}
+
+/* EDUCATION GRID */
 
 .education-grid {
   display: grid;
@@ -180,35 +190,21 @@ time {
   white-space: nowrap; /* date stays on one row */
 }
 
-.education-entry h5,
+.education-entry h3,
 .education-entry p {
   grid-column: 2; /* always right column */
   text-align: left;
 }
+.education-entry h3 {
+  font-size: var(--text-sm);
+}
 
 .education-grid p:first-of-type {
   font-style: normal; /* annulles italic */
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
 }
 
-/* SUMMARY */
-
-summary {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-  color: var(--accent-complementary);
-  font-size: var(--text-sm);
-  font-weight: 800;
-  margin: 0 0 1rem 0;
-  transition: font-size 0.4s ease;
-}
-
-summary:hover {
-  font-size: var(--text-base);
-}
+/* Back to Top Link (Education & Page End */
 
 .btt-lk {
   text-align: center;
