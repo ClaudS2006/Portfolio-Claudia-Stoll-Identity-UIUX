@@ -215,8 +215,30 @@ class SiteNav extends HTMLElement {
       nav.querySelector('a').focus();
       navHeader.style.background = 'transparent';
       document.querySelector('main').classList.add('blurred');
+      nav.querySelectorAll('a').forEach(link => link.removeAttribute('tabindex'));
+      // Focus Trap
+      nav.addEventListener('keydown', trapFocus);
     }
 
+    const shadow = this.shadowRoot; // ← außerhalb der Funktionen speichern
+
+    function trapFocus(e) {
+      if (e.key !== 'Tab') return;
+  
+      const focusable = [...nav.querySelectorAll('a, button')];
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const active = shadow.activeElement;
+  
+      if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+         e.preventDefault();
+         first.focus();
+        }
+      }
+      
     function closeMenu() {
       nav.classList.remove('open');
       overlay.classList.remove('open');
@@ -226,6 +248,9 @@ class SiteNav extends HTMLElement {
       hamburger.focus();
       navHeader.style.background = 'var(--bg)';
       document.querySelector('main').classList.remove('blurred');
+      nav.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', '-1'));
+      // Rem Focus Trap
+      nav.removeEventListener('keydown', trapFocus);
     }
 
     hamburger.addEventListener('click', () => {
@@ -237,17 +262,6 @@ class SiteNav extends HTMLElement {
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeMenu();
-    });
-
-    nav.addEventListener('keydown', (e) => {
-      if (e.key === 'Tab') {
-        const links = [...nav.querySelectorAll('a')];
-        const last = links[links.length - 1];
-        if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          hamburger.focus();
-        }
-      }
     });
       
     // close side menu on navigation

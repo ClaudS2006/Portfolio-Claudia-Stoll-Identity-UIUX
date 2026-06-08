@@ -20,12 +20,16 @@ const skills = {
   development: {
     title: 'Development',
     level: 70,
-    tools: ['HTML/CSS', 'JavaScript', 'React/TypeScript', 'Python/Flask'],
+    tools: ['HTML', 'CSS', 'JavaScript', 'React', 'TypeScript', 'Python', 'Flask'],
     details: [
       'Web Components',
       'Vite & Vitest',
       'React Router & i18n',
       'REST API Integration',
+      'Spoonacular API',
+      'Session Management',
+      'PWA / Service Worker',
+      'Parameterized Queries',
       'CRUD Operations',
       'LocalStorage',
       'Jinja2 & SQLite',
@@ -40,8 +44,15 @@ const skills = {
       'Version Control & GitHub Desktop',
       'Database Management',
       'Deployment',
+      'Thunder Client',
       'Claude AI assisted Development',
       'SQLite CLI',
+      'SQLite Viewer (VS Code Extension)',
+      'Notepad ++',
+      'MDN Web Docs',
+      'Python Docs',
+      'YouTube Courses',
+      'Codecademy / Udemy Learning Platforms',
     //   'Laragon (coming soon)'
     ]
   }
@@ -68,7 +79,7 @@ function renderSkills() {
       <details>
         <summary>View Details</summary>
         <ul class="skill-details">
-          ${skill.details.map(detail => `<li>${detail}</li>`).join('')}
+          ${skill.details.map(detail => `<li><span>${detail}</span></li>`).join('')}
         </ul>
       </details>
     `;

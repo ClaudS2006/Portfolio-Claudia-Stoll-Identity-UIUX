@@ -5,8 +5,8 @@
   padding-top: clamp(2rem, 5vw, 4rem);
 }
 
-#contact h2 {
-  font-size: clamp(1rem, 2vw, 1.4rem);
+#contact-heading {
+  font-size: var(--text-lg);
   background-color: var(--contact-h2-bg);
   max-width: 80%;
   margin-inline: auto;
@@ -19,6 +19,7 @@
   font-style: italic;
   color: var(--ink);
   padding: 1rem 0;
+  max-width: 80%;
 }
 
 .contact-form {
