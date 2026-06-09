@@ -139,6 +139,7 @@ p {
   position: absolute;
   width: 100%;
   transition: opacity 0.8s ease-in-out;
+  will-change: opacity;
 }
 
 /* ACTIVE SLIDE */
@@ -179,6 +180,7 @@ p {
   align-items: center;
   gap: 0.3rem;
   z-index: 10;
+  will-change: opacity;
 }
 
 .pause-container.hidden {

@@ -3,9 +3,14 @@ const skills = {
   design: {
     title: 'Design',
     level: 80,
-    tools: ['Figma', 'FigJam', 'Wireframes', 'Prototyping','UX Research', 'UI Creation'],
+    tools: ['Figma, Figma Make & FigJam', 'Wireframes', 'Prototyping','UX Research', 'UI Creation'],
     details: [
       'Nielsen\'s Heuristics',
+      'Rules of Visual Hierarchy',
+      'Color Theory',
+      'Typography',
+      'RE-usable Components',
+      'Smart Animations',
       'Problem Statement & HMW Questions',
       'User Interviews & Supervised Sessions',
       'Empathy Maps & User Personas',
@@ -22,6 +27,10 @@ const skills = {
     level: 70,
     tools: ['HTML', 'CSS', 'JavaScript', 'React', 'TypeScript', 'Python', 'Flask'],
     details: [
+      'The CSS Box Model',
+      'Flexbox & Grid',
+      'Bootstrap & SCSS',
+      'Tailwind CSS (self-study)',
       'Web Components',
       'Vite & Vitest',
       'React Router & i18n',
@@ -59,9 +68,11 @@ const skills = {
 };
 
 // ====== RENDER SKILLS ======
+
 function renderSkills() {
   const container = document.getElementById('skills-container');
-  
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
   Object.values(skills).forEach(skill => {
     const skillEl = document.createElement('div');
     skillEl.classList.add('skill-card');
@@ -86,35 +97,44 @@ function renderSkills() {
     
     container.appendChild(skillEl);
       
-    setTimeout(() => {
-    skillEl.querySelectorAll('.skill-bar-fill').forEach((bar, index) => {
-    bar.style.width = Object.values(skills)[index].level + '%';
+    if (prefersReducedMotion.matches) {
+      skillEl.querySelectorAll('.skill-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.level + '%';
       });
-    }, 100);
+    } else {
+      setTimeout(() => {
+        skillEl.querySelectorAll('.skill-bar-fill').forEach(bar => {
+          bar.style.width = bar.dataset.level + '%';
+        });
+      }, 100);
+}
   });
 }
 
 // ====== PROJECTS DATA =========================================================
+
 const projects = [
   {
     title: 'Learning Resources Library',
     category: 'code',
     icon: '📚',
-    thumbnail: null,
-    period: 'Spring 2026',
-    description: 'A web application for managing and organizing learning resources, built as a Backend Essentials school project.',
-    stack: ['Python', 'Flask', 'SQLite', 'Jinja2', 'HTML/CSS'],
-    link: '#'
+    thumbnail: null, 
+    period: 'Oslo Nye Fagskole · Spring 2026',
+    description: 'Inspired by a blog application assignment, I designed and built my own interpretation. This project is a Learning Resources Library to add, store, edit and organize programming references, a tool I actually needed as a student. Developed with Flask, SQLite and Claude AI, featuring CRUD operations, many-to-many tag relationships, server-side validation and accessibility. Full details in README.',
+    stack: ['HTML/CSS', 'Accessibility/ARIA', 'Python', 'Flask', 'SQLite', 'Jinja2'],
+    link: 'https://github.com/ClaudS2006/Learning-Resources-Library-Project-Assignment',  // repo links
+    demo: null  // for pages/ pythonanywhere etc if available
   },
   {
     title: 'Live is Motion',
     category: 'code',
     icon: '💪🏻',
     thumbnail: null,
-    period: '2026',
-    description: 'A personal fitness PWA with exercise tracking, recipes and workout logs.',
-    stack: ['Python', 'Flask', 'SQLite', 'PWA', 'Spoonacular API'],
-    link: '#'
+    period: 'Spring 2026',
+    description: 'Based on my Learning Resources Library project, I created a personal fitness & health PWA. Here you can track add, edit & log exercises in addition to finding recipes with the Spoonacular API and save your own recipes. More deails on Github ReadMe.',
+    stack: ['HTML/CSS', 'JavaScript', 'Python', 'Flask', 'SQLite', 'PWA', 'Spoonacular API'],
+    link: 'https://github.com/ClaudS2006/Live-is-Motion-by-Claud_S',
+    demo: 'https://clauds2006.pythonanywhere.com/'
   },
   {
     title: 'Identity through UI/UX',
@@ -123,7 +143,7 @@ const projects = [
     thumbnail: null,
     period: '2026',
     description: 'My personal portfolio – itself a portfolio piece built with Vanilla HTML, CSS and JavaScript.',
-    stack: ['HTML', 'CSS', 'JavaScript', 'Web Components', 'Formspree'],
+    stack: ['HTML', 'CSS', 'JavaScript', 'Web Components', 'Formspree', 'Accessibility/ARIA'],
     link: '#'
   },
   {
@@ -170,6 +190,7 @@ const projects = [
 ];
 
 // ====== RENDER TABS ======
+
 function renderTabs() {
   const container = document.getElementById('projects-container');
   
@@ -199,6 +220,7 @@ function renderTabs() {
 }
 
 // ====== FILTER PROJECTS ======
+
 let currentFilter = 'all';
 
 function filterProjects(filter) {
@@ -211,6 +233,7 @@ function filterProjects(filter) {
 }
 
 // ====== RENDER SLIDER ======
+
 function renderSlider(filteredProjects) {
   // rmve prior slide if appl
   const existing = document.getElementById('project-slider');
@@ -225,9 +248,14 @@ function renderSlider(filteredProjects) {
     <button class="slider-btn slider-prev" aria-label="Previous Project">&#8249;</button>
     
     <!-- slides -->
-    <div class="slider-track">
+    <div class="slider-track"
+      role="region" 
+      aria-label="Projects Gallery"
+      aria-live="polite">
       ${filteredProjects.map((project, index) => `
-        <div class="project-card ${index === 0 ? 'active' : ''}" data-index="${index}">
+        <div class="project-card ${index === 0 ? 'active' : ''}" data-index="${index}"
+          role="article"
+          aria-label="${project.title}">
           <div class="project-visual">
             ${project.thumbnail 
               ? `<img src="${project.thumbnail}" alt="${project.title}">` 
@@ -249,9 +277,12 @@ function renderSlider(filteredProjects) {
     <button class="slider-btn slider-next" aria-label="Next Project">&#8250;</button>
 
     <!-- progress indicator -->
-    <div class="slider-dots">
+    <div class="slider-dots" role="tablist" aria-label="Project Navigation">
       ${filteredProjects.map((_, index) => `
-        <button class="dot ${index === 0 ? 'active' : ''}" data-index="${index}" aria-label="Project ${index + 1}"></button>
+        <button class="dot ${index === 0 ? 'active' : ''}" data-index="${index}" 
+        role="tab"
+        aria-selected="${index === 0 ? 'true' : 'false'}"
+        aria-label="Project ${index + 1}"></button>
       `).join('')}
     </div>
   `;
@@ -263,6 +294,7 @@ function renderSlider(filteredProjects) {
 }
 
 // ====== INIT SLIDER ======
+
 function initSlider(filteredProjects) {
   let currentIndex = 0;
   
@@ -278,10 +310,14 @@ function initSlider(filteredProjects) {
     
     // Active Klasse setzen
     cards.forEach(card => card.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
+    dots.forEach(dot => {
+      dot.classList.remove('active');
+      dot.setAttribute('aria-selected', 'false');
+    });
     
     cards[index].classList.add('active');
     dots[index].classList.add('active');
+    dots[index].setAttribute('aria-selected', 'true');
     
     currentIndex = index;
   }
