@@ -131,7 +131,7 @@ const projects = [
     icon: '💪🏻',
     thumbnail: null,
     period: 'Spring 2026',
-    description: 'Based on my Learning Resources Library project, I created a personal fitness & health PWA. Here you can track add, edit & log exercises in addition to finding recipes with the Spoonacular API and save your own recipes. More deails on Github ReadMe.',
+    description: 'Based on my ONF Learning Resources Library project, I created a personal fitness & health PWA. Here you can track add, edit & log exercises in addition to finding recipes with the Spoonacular API and save your own recipes. More deails on Github ReadMe.',
     stack: ['HTML/CSS', 'JavaScript', 'Python', 'Flask', 'SQLite', 'PWA', 'Spoonacular API'],
     link: 'https://github.com/ClaudS2006/Live-is-Motion-by-Claud_S',
     demo: 'https://clauds2006.pythonanywhere.com/'
@@ -141,10 +141,12 @@ const projects = [
     category: 'code',
     icon: '🦄',
     thumbnail: null,
-    period: '2026',
-    description: 'My personal portfolio – itself a portfolio piece built with Vanilla HTML, CSS and JavaScript.',
+    period: 'Ongoing since Oslo Nye Fagskole Spring 2025',
+    description: 'My personal portfolio – itself a portfolio piece. Built from scratch with Vanilla HTML, CSS and JavaScript, featuring Web Components, intrinsic design, accessibility and a personalized cover letter page. This is the second iteration – the first version from 2025 is still online. Full details in README.',
     stack: ['HTML', 'CSS', 'JavaScript', 'Web Components', 'Formspree', 'Accessibility/ARIA'],
-    link: '#'
+    link: '#',
+    demo: '..',
+    v1: '..'
   },
   {
     title: 'Strømy',
@@ -268,7 +270,13 @@ function renderSlider(filteredProjects) {
             <ul class="project-stack">
               ${project.stack.map(tech => `<li>${tech}</li>`).join('')}
             </ul>
-            <a href="${project.link}" class="project-link">View Project →</a>
+            <div class="project-links">
+              <a href="${project.link}" class="project-link" target="_blank" rel="noopener noreferrer">
+                ${project.category === 'design' ? 'View in Figma →' : 'View Code →'}
+              </a>
+                ${project.demo ? `<a href="${project.demo}" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo →</a>` : ''}
+                ${project.v1 ? `<a href="${project.v1}" class="project-link" target="_blank" rel="noopener noreferrer">View v1 →</a>` : ''}
+            </div>
           </div>
         </div>
       `).join('')}
