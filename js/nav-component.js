@@ -170,14 +170,12 @@ class SiteNav extends HTMLElement {
 
     <div class="overlay"></div>
 
-    const BASE = '/Portfolio-Claudia-Stoll-Identity-UIUX';
-
     <nav id="nav-drawer" aria-label="Main Navigation">
         <img id="logo" src="imagery/BrandLogoClaudiaStoll.svg" alt="Logo Claudia Stoll" />
-        <a href="${BASE}/index.html">Home</a>
-        <a href="${BASE}/projects.html">Projects</a>
-        <a href="${BASE}/aboutMe.html">This is Me</a>
-        <a href="${BASE}/aboutMe.html#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="aboutMe.html">This is Me</a>
+        <a href="aboutMe.html#contact">Contact</a>
 
         <div class="drawer-footer">
             <span>Claudia Stoll</span>
