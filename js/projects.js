@@ -43,6 +43,7 @@ const skills = {
       'LocalStorage',
       'Jinja2 & SQLite',
       'Intrinsic Design & Accessibility'
+      // Go (coming)
     ]
   },
   tools: {
@@ -62,6 +63,7 @@ const skills = {
       'Python Docs',
       'YouTube Courses',
       'Codecademy / Udemy Learning Platforms',
+      'Socialify & Screely',
     //   'Laragon (coming soon)'
     ]
   }
@@ -118,7 +120,7 @@ const projects = [
     title: 'Learning Resources Library',
     category: 'code',
     icon: '📚',
-    thumbnail: null, 
+    thumbnail: 'imagery/projects/Thumbnail-LRL.jpg', 
     period: 'Oslo Nye Fagskole · Spring 2026',
     description: 'Inspired by a blog application assignment, I designed and built my own interpretation. This project is a Learning Resources Library to add, store, edit and organize programming references, a tool I actually needed as a student. Developed with Flask, SQLite and Claude AI, featuring CRUD operations, many-to-many tag relationships, server-side validation and accessibility. Full details in README.',
     stack: ['HTML/CSS', 'Accessibility/ARIA', 'Python', 'Flask', 'SQLite', 'Jinja2'],
@@ -129,7 +131,7 @@ const projects = [
     title: 'Live is Motion',
     category: 'code',
     icon: '💪🏻',
-    thumbnail: null,
+    thumbnail: 'imagery/projects/Thumbnail-LiM.jpg',
     period: 'Spring 2026',
     description: 'Based on my ONF Learning Resources Library project, I created a personal fitness & health PWA. Here you can track add, edit & log exercises in addition to finding recipes with the Spoonacular API and save your own recipes. More deails on Github ReadMe.',
     stack: ['HTML/CSS', 'JavaScript', 'Python', 'Flask', 'SQLite', 'PWA', 'Spoonacular API'],
@@ -140,54 +142,90 @@ const projects = [
     title: 'Identity through UI/UX',
     category: 'code',
     icon: '🦄',
-    thumbnail: null,
-    period: 'Ongoing since Oslo Nye Fagskole Spring 2025',
+    thumbnail: 'imagery/projects/Thumbnail-Portfolio.jpg',
+    period: 'Ongoing since Oslo Nye Fagskole · Spring 2025',
     description: 'My personal portfolio – itself a portfolio piece. Built from scratch with Vanilla HTML, CSS and JavaScript, featuring Web Components, intrinsic design, accessibility and a personalized cover letter page. This is the second iteration – the first version from 2025 is still online. Full details in README.',
     stack: ['HTML', 'CSS', 'JavaScript', 'Web Components', 'Formspree', 'Accessibility/ARIA'],
-    link: '#',
-    demo: '..',
-    v1: '..'
+    link: 'https://github.com/ClaudS2006/Indentity-through-UI-UX',
+    demo: null,
+    v1: 'https://clauds2006.github.io/Indentity-through-UI-UX/'
   },
   {
     title: 'Strømy',
     category: 'design',
     icon: '⚡',
-    thumbnail: null,
-    period: '2025',
-    description: 'Energy monitoring app – UX/UI final project. Nature-inspired design system with accessibility-first approach.',
-    stack: ['Figma', 'FigJam', 'UX Research', 'Design System'],
-    link: '#'
+    thumbnail: 'imagery/projects/Thumbnail-Stromy.jpg',
+    period: 'Oslo Nye Fagskole · Autumn 2025',
+    description: 'For my UX/UI final project I designed Strømy – a nature-inspired energy monitoring app. The process followed the full Double Diamond including user research, personas, journey maps, wireframes and a comprehensive design system with color swatches, typography scale and accessible components.',
+    stack: ['Figma', 'FigJam', 'UX Research & Methods', 'Design System', 'Wireframes', 'Prototypes'],
+    link: 'https://www.figma.com/design/Kz9fWXhr80JLEQe44V3nDT/DES1002-Claudia-Stoll-Project-Assignment-06.12.2025-1?node-id=7-344&t=ftrav85g0G7IjmRf-1',
+    demo: null
   },
   {
     title: 'Wilde Frames',
     category: 'code',
     icon: '🦁',
-    thumbnail: null,
-    period: '2025',
-    description: 'Animal photography framing shop with frame compatibility algorithm, shopping cart and i18n.',
-    stack: ['React', 'TypeScript', 'Vite', 'Vitest', 'i18n'],
-    link: '#'
+    thumbnail: 'imagery/projects/image 4.jpg',
+    period: 'Oslo Nye Fagskole · Autumn 2025',
+    description: 'For my Interactive Frontend Development assignment I built Wilde Frames – an e-commerce app for professionally framed animal photography. The highlight is a custom frame compatibility algorithm that scores frames based on aspect ratio analysis. It features a shopping cart with localStorage, three languages (EN/NO/SV) and unit tested with Vitest. Full details in README.',
+    stack: ['HTML/CSS', 'React', 'TypeScript', 'Bootstrap', 'Vite', 'Vitest', 'i18n'],
+    link: 'https://github.com/ClaudS2006/Wilde-Frames-Project-Assignment-C-Stoll',
+    demo: null
   },
   {
     title: 'Beredskapet',
     category: 'design',
     icon: '🛡️',
-    thumbnail: null,
-    period: '2026',
-    description: 'Emergency preparedness app – UX team project. Platform pivot from native app to responsive website.',
-    stack: ['Figma', 'FigJam', 'UX Research', 'Design System'],
-    link: '#'
-    },
-    {
-    title: 'Work Requirement ONF',
+    thumbnail: 'imagery/projects/Thumbnail-BeredSkapet.jpg',
+    period: 'Oslo Nye Fagskole · 2026',
+    description: 'In a team of four we designed Beredskapet – an emergency preparedness platform. Our team pivoted from a native app to a responsive website after user research revealed broader accessibility needs. I contributed to UX research, the design system, wireframes and prototypes for Mobile, Tablet and Desktop.',
+    stack: ['Figma', 'FigJam', 'UX Research', 'Design System', 'Wireframes', 'Prototyping', 'Accessibility/WCAG'],
+    link: 'https://www.figma.com/design/idrfjmwnS5xtX8aAzA7IZ1/TPDE2001-Project-Assignment?node-id=9591-18076&t=jYVwFAUl9d2kuh8s-1'
+  },
+  {
+    title: 'Entertainment Gallery',
+    category: 'code',
+    icon: '🎵',
+    thumbnail: 'imagery/projects/Thumbnail-EntertainmentGallery.jpg',
+    period: 'Oslo Nye Fagskole · Autumn 2025',
+    description: 'A responsive music gallery showcasing my favorite songs across different genres – from Psy-trance to Industrial Metal! Built as a Work Requirement featuring reusable React components, TypeScript interfaces and interactive modals. Full details in README.',
+    stack: ['React', 'TypeScript', 'Vite', 'React Bootstrap', 'Bootstrap'],
+    link: 'https://github.com/ClaudS2006/interactive_frontend_work_req_4',
+    demo: null,
+  },
+  {
+    title: 'Personal Preference Dashboard',
+    category: 'code',
+    icon: '🎨',
+    thumbnail: 'imagery/projects/Thumbnail-PreferenceDashboard.jpg',
+    period: 'Oslo Nye Fagskole · Autumn 2025',
+    description: 'A multi-page React application demonstrating advanced React Router concepts. Users can configure themes, moods, text sizes and custom greetings with live preview updates. Features custom hooks, Outlet Context for state sharing and clean component architecture following SRP. Full details in README.',
+    stack: ['React', 'TypeScript', 'React Router', 'Vite', 'Custom CSS'],
+    link: 'https://github.com/ClaudS2006/interactive_frontend_work_req_3',
+    demo: null,
+  },
+  {
+    title: 'ONF Student Journey Map',
     category: 'design',
-    icon: '🛡️',
-    thumbnail: null,
-    period: '2026',
-    description: 'Emergency preparedness app – UX team project. Platform pivot from native app to responsive website.',
-    stack: ['Figma', 'FigJam', 'UX Research', 'User Journey Map'],
-    link: '#'
-    }
+    icon: '🗺️',
+    thumbnail: 'imagery/projects/Thumbnail-UserJourneyMap.jpg',
+    period: 'Oslo Nye Fagskole · Spring 2026',
+    description: 'As a Work Requirement I created a Journey Map exploring the experience of an ONF student. Mapping key touchpoints, pain points and opportunities for improvement across stages like onboarding, learning and seeking support – using myself as the primary user.',
+    stack: ['FigJam', 'UX Research', 'Journey Mapping'],
+    link: 'https://www.figma.com/board/xYMAjhKO2PFz3B2azfG8dT/Work-Requ-2-TPDE2001-Claudia-Stoll?node-id=6-30&t=qIJfuBtvAGlejenT-1',
+    demo: null,
+  },
+  {
+    title: 'Portfolio v1 – Design Assignment',
+    category: 'design',
+    icon: '🎨',
+    thumbnail: 'imagery/projects/Thumbnail-PortfolioV1.jpg',
+    period: 'Oslo Nye Fagskole · Spring 2025',
+    description: 'My first semester design project – a complete UX/UI portfolio assignment including personas, empathy maps, moodboards and visual design explorations. The foundation that inspired the coded portfolio you are looking at now.',
+    stack: ['Figma', 'FigJam', 'UX Research', 'Personas', 'Moodboards'],
+    link: 'https://www.figma.com/design/4QiXIchJjb0ybGphA41ows/TFAG2001-Wireframes--Prototypes-Claudia-Stoll?node-id=583-4507&t=8tRjRK6o48FyiTXi-1',
+    demo: null,
+},
   
 ];
 
