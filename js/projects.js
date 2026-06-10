@@ -165,7 +165,7 @@ const projects = [
     title: 'Wilde Frames',
     category: 'code',
     icon: '🦁',
-    thumbnail: 'imagery/projects/image 4.jpg',
+    thumbnail: 'Thumbnail-WildeFrames.jpg',
     period: 'Oslo Nye Fagskole · Autumn 2025',
     description: 'For my Interactive Frontend Development assignment I built Wilde Frames – an e-commerce app for professionally framed animal photography. The highlight is a custom frame compatibility algorithm that scores frames based on aspect ratio analysis. It features a shopping cart with localStorage, three languages (EN/NO/SV) and unit tested with Vitest. Full details in README.',
     stack: ['HTML/CSS', 'React', 'TypeScript', 'Bootstrap', 'Vite', 'Vitest', 'i18n'],
