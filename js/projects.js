@@ -147,7 +147,7 @@ const projects = [
     description: 'My personal portfolio – itself a portfolio piece. Built from scratch with Vanilla HTML, CSS and JavaScript, featuring Web Components, intrinsic design, accessibility and a personalized cover letter page. This is the second iteration – the first version from 2025 is still online. Full details in README.',
     stack: ['HTML', 'CSS', 'JavaScript', 'Web Components', 'Formspree', 'Accessibility/ARIA'],
     link: 'https://github.com/ClaudS2006/Indentity-through-UI-UX',
-    demo: null,
+    demo: 'https://clauds2006.github.io/Portfolio-Claudia-Stoll-Identity-UIUX/',
     v1: 'https://clauds2006.github.io/Indentity-through-UI-UX/'
   },
   {
