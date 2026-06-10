@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="/Portfolio-Claudia-Stoll-Identity-UIUX/">
+  <script>
+    const isLocal = window.location.hostname === 'localhost' || 
+                    window.location.hostname === '127.0.0.1';
+  
+    const base = document.querySelector('base');
+    base.href = isLocal ? '/' : '/Portfolio-Claudia-Stoll-Identity-UIUX/';
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Claudia Stoll - Projects & Skills</title>
