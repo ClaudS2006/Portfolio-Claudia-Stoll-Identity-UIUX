@@ -269,6 +269,19 @@ details[open] summary {
   font-size: 3rem;
 }
 
+/* Swipe Hint for Mobile */
+
+.swipe-hint {
+  display: none;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: var(--text-base);
+  color: var(--body-muted);
+  margin: 0.5rem 0;
+  letter-spacing: 0.2rem;
+  font-style: normal;
+}
+
 /* ====== PROJECT STACK ====== */
 .project-stack {
   display: flex;
@@ -421,6 +434,12 @@ details[open] summary {
   
   .project-stack {
     justify-content: center; 
+  }
+}
+
+@media (max-width: 750px) {
+  .swipe-hint {
+    display: block; 
   }
 }
 

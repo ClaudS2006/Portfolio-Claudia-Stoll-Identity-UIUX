@@ -44,6 +44,7 @@ const skills = {
       'Jinja2 & SQLite',
       'Intrinsic Design & Accessibility'
       // Go (coming)
+      // PhP (coming)
     ]
   },
   tools: {
@@ -302,6 +303,7 @@ function renderSlider(filteredProjects) {
               ? `<img src="${project.thumbnail}" alt="${project.title}">` 
               : `<span class="project-icon">${project.icon}</span>`}
           </div>
+          <p class="swipe-hint">&#8249; swipe &#8250;</p>
           <div class="project-info">
             <h3>${project.title}</h3>
             <p class="project-period">${project.period}</p>
@@ -356,11 +358,11 @@ function initSlider(filteredProjects) {
   const nextBtn = document.querySelector('.slider-next');
 
   function goTo(index) {
-    // Grenzen prüfen
+    // check borders
     if (index < 0) index = filteredProjects.length - 1;
     if (index >= filteredProjects.length) index = 0;
     
-    // Active Klasse setzen
+    // set class active
     cards.forEach(card => card.classList.remove('active'));
     dots.forEach(dot => {
       dot.classList.remove('active');
@@ -374,7 +376,7 @@ function initSlider(filteredProjects) {
     currentIndex = index;
   }
 
-  // Pfeil Buttons
+  // Arrow Buttons
   prevBtn.addEventListener('click', () => goTo(currentIndex - 1));
   nextBtn.addEventListener('click', () => goTo(currentIndex + 1));
 
@@ -389,6 +391,30 @@ function initSlider(filteredProjects) {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') goTo(currentIndex - 1);
     if (e.key === 'ArrowRight') goTo(currentIndex + 1);
+  });
+
+  // Touch/Swipe Support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  const track = document.querySelector('.slider-track');
+
+  track.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true }); // tells browser scrolling is not blocked
+
+  track.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+  
+    const diff = touchStartX - touchEndX;
+  
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        goTo(currentIndex + 1); // swipe left next
+      } else {
+        goTo(currentIndex - 1); // ← swipe right previous
+      }
+    }
   });
 }
 
