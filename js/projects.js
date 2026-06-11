@@ -307,7 +307,7 @@ function renderSlider(filteredProjects) {
             <p class="project-period">${project.period}</p>
             
             <details ${isMobile ? '' : 'open'} class="project-details">
-              <summary>Description</summary>
+              <summary>Project Description</summary>
               <p class="project-description">${project.description}</p>
             </details>
             
