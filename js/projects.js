@@ -275,6 +275,7 @@ function filterProjects(filter) {
 // ====== RENDER SLIDER ======
 
 function renderSlider(filteredProjects) {
+  const isMobile = window.innerWidth <= 750;
   // rmve prior slide if appl
   const existing = document.getElementById('project-slider');
   if (existing) existing.remove();
@@ -304,7 +305,12 @@ function renderSlider(filteredProjects) {
           <div class="project-info">
             <h3>${project.title}</h3>
             <p class="project-period">${project.period}</p>
-            <p class="project-description">${project.description}</p>
+            
+            <details ${isMobile ? '' : 'open'} class="project-details">
+              <summary>Description</summary>
+              <p class="project-description">${project.description}</p>
+            </details>
+            
             <ul class="project-stack">
               ${project.stack.map(tech => `<li>${tech}</li>`).join('')}
             </ul>
@@ -312,8 +318,8 @@ function renderSlider(filteredProjects) {
               <a href="${project.link}" class="project-link" target="_blank" rel="noopener noreferrer">
                 ${project.category === 'design' ? 'View in Figma →' : 'View Code →'}
               </a>
-                ${project.demo ? `<a href="${project.demo}" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo →</a>` : ''}
-                ${project.v1 ? `<a href="${project.v1}" class="project-link" target="_blank" rel="noopener noreferrer">View v1 →</a>` : ''}
+              ${project.demo ? `<a href="${project.demo}" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo →</a>` : ''}
+              ${project.v1 ? `<a href="${project.v1}" class="project-link" target="_blank" rel="noopener noreferrer">View v1 →</a>` : ''}
             </div>
           </div>
         </div>
