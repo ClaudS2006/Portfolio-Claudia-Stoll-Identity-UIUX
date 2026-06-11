@@ -68,13 +68,19 @@ function switchSlide() {
 
 const hero = document.querySelector('.hero');
 const pauseContainer = document.querySelector('.pause-container');
+let hasStarted = false;
 
 const heroObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       // Hero visible - show btn
       pauseContainer.classList.remove('hidden');
+      if (!hasStarted) {
+        hasStarted = true; // ← erstes Mal merken
+        return; // ← nicht pausieren beim ersten Laden
+      }
     } else {
+      if (!hasStarted) return;
       // Hero out of viewport → hide btn + pause animation
       pauseContainer.classList.add('hidden');
       clearInterval(currentInterval);
