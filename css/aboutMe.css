@@ -106,13 +106,13 @@
   color: var(--ink);
 }
 
-.card-text p:first-of-type {
+.card-text > p:first-of-type {
   font-size: var(--text-base);
   font-style: italic;
   color: var(--ink);
 }
 
-.card-text p {
+.card-text > p {
   display: block;
   text-align: center;
   font-size: var(--text-sm);
@@ -172,6 +172,11 @@ summary:hover {
   grid-template-rows: repeat(2, 1fr); /* 2 next to each other */
   gap: 2rem;
   width: 100%;
+  text-align: left;
+}
+
+.education-grid * {
+  margin-inline: 0; /* all childelements */
 }
 
 .education-entry {
@@ -189,19 +194,24 @@ time {
   white-space: normal;
   
 }
-
 .education-entry h3,
-.education-entry p {
-  grid-column: 2; /* always right column */
+.education-entry time {
+  margin-inline: 0;
   text-align: left;
 }
+
 .education-entry h3 {
   font-size: var(--text-base);
+  grid-column: 2; /* always right column */
 }
 
-.education-grid p:first-of-type {
-  font-style: normal; /* annulles italic */
+.education-description {
+  font-style: normal;
   font-size: var(--text-sm);
+  color: var(--body-muted);
+  grid-column: 2;
+  margin-inline: 0;
+  text-align: left;
 }
 
 /* Back to Top Link (Education & Page End */
@@ -217,4 +227,21 @@ time {
 .btt-lk:hover{
   text-decoration: underline;
   text-underline-offset: 0.3rem;
+}
+
+@media (max-width: 600px) {
+  .education-entry {
+    grid-template-columns: 1fr; /* 1 col */
+    gap: 0.2rem;
+  }
+
+  time {
+    grid-column: 1; /* full width */
+    margin-bottom: 1rem;
+  }
+
+  .education-entry h3,
+  .education-entry p {
+    grid-column: 1; /* full width */
+  }
 }

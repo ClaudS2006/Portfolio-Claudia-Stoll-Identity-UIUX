@@ -223,6 +223,7 @@ details[open] summary {
 .slider-track {
   position: relative;
   min-height: auto; 
+  touch-action: pan-y; /* vertical scroll only*/
 }
 
 /* ====== PROJECT CARD ====== */
