@@ -84,8 +84,8 @@ class SiteNav extends HTMLElement {
         nav a {
             color: var(--bg);
             text-decoration: none;
-            font-family: 'Playfair Display', serif;
             font-size: var(--text-lg);
+            font-weight: 600;
             line-height: 1.2;
             padding: 10px 0;
             border-bottom: 1px solid rgba(245,240,232,0.1);
